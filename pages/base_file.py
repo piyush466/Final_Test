@@ -1,3 +1,5 @@
+import time
+
 from selenium import webdriver
 from selenium.webdriver.support.select import Select
 from selenium.webdriver.support.wait import WebDriverWait
@@ -73,5 +75,14 @@ class Base:
             assert actual_value == expected_value
             # self.logs.info(f"Assertion passed: {actual_value} == {expected_value}")
         except Exception as E:
-            raise
+            Base(self.driver).take_screenshot()
+            raise E
             # self.logs.error(f"Assertion failed: {actual_value} == {expected_value}")
+
+    def take_screenshot(self):
+        timestamp = time.strftime("%Y%m%d-%H%M%S")
+        screenshot_name = f"screenshot_{timestamp}.png"
+        return self.driver.save_screenshot(f"../screenshot/{screenshot_name}")
+
+
+
