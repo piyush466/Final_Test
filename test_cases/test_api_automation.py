@@ -1,47 +1,45 @@
+import json
+import pytest
 import requests
-class Test_API:
+
+class TestAPI:
 
     def test_01_get_api(self):
-        responce = requests.get("https://reqres.in/api/users?page=2")
-        print(responce.text)
-        assert responce.status_code == 200, "Failed"
+        response = requests.get("https://reqres.in/api/users?page=2")
+        assert response.status_code == 200, f"Failed: {response.text}"
+        print(response.json())  # Optional: Print response JSON
 
     def test_02_post_api(self):
         payload = {
-              "name": "piyush",
-              "job": "testing"
-                    }
-        responce = requests.post("https://reqres.in/api/users", json=payload)
-        print(responce.status_code)
-        print(responce.text)
-        assert responce.status_code == 201, "Pot API not working"
+            "name": "piyush",
+            "job": "testing"
+        }
+        response = requests.post("https://reqres.in/api/users", json=payload)
+        assert response.status_code == 201, f"Failed: {response.text}"
+        assert response.json()["job"] == "testing"
+        print(response.json())  # Optional: Print response JSON
 
     def test_03_put_api(self):
         payload = {
-          "name": "piyush",
-          "job": "zion resident"
-                }
-        responce = requests.put("https://reqres.in/api/users/2",  json=payload)
-        print(responce.status_code)
-        print(responce.text)
-        assert responce.json()['name'] == "piyush"
-        assert responce.status_code == 200, "PUT API is not working"
+            "name": "piyush",
+            "job": "zion resident"
+        }
+        response = requests.put("https://reqres.in/api/users/2", json=payload)
+        assert response.status_code == 200, f"Failed: {response.text}"
+        assert response.json()['name'] == "piyush"
+        print(response.json())  # Optional: Print response JSON
 
     def test_04_post_api_login(self):
         payload = {
-        "email": "eve.holt@reqres.in",
-        "password": "cityslicka"
-            }
-        responce = requests.post('https://reqres.in/api/login', json=payload)
-        print(responce.text)
-        print(responce.status_code)
-        assert responce.status_code == 200, "Login API is not working"
+            "email": "eve.holt@reqres.in",
+            "password": "cityslicka"
+        }
+        response = requests.post('https://reqres.in/api/login', json=payload)
+        assert response.status_code == 200, f"Failed: {response.text}"
+        print(response.json())  # Optional: Print response JSON
 
-
-
-
-
-
-
-
+    def test_05_delete_api(self):
+        response = requests.delete("https://reqres.in/api/users/2")
+        assert response.status_code == 204, f"Failed: {response.text}"
+        print("Deletion successful")
 

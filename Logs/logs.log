@@ -4,3 +4,23 @@
 2024-07-17 18:40:23,476 - INFO - Retriveing the page Logged In Successfully | Practice Test Automation
 2024-07-17 18:40:23,610 - ERROR - Your test is fail please check screenshot:- screenshot_20240717-184023.png
 2024-07-17 18:40:23,610 - ERROR - Assertion failed: Logged In Successfully | Practice Test Automation == Logged In Successfully | Practice Test Automatio, 
+2024-07-17 18:47:09,726 - INFO - Sent keys 'student' to element located by ('id', 'username')
+2024-07-17 18:47:09,770 - INFO - Sent keys 'Password123' to element located by ('id', 'password')
+2024-07-17 18:47:10,979 - INFO - Clicked on element located by ('id', 'submit')
+2024-07-17 18:47:11,406 - INFO - Clicked on element located by ('xpath', "//a[text()='Log out']")
+2024-07-17 18:47:11,409 - INFO - Retriveing the page Test Login | Practice Test Automation
+2024-07-17 18:47:11,409 - INFO - Assertion passed: Test Login | Practice Test Automation == Test Login | Practice Test Automation
+2024-07-17 18:47:32,634 - INFO - Sent keys 'student' to element located by ('id', 'username')
+2024-07-17 18:47:32,677 - INFO - Sent keys 'Password123' to element located by ('id', 'password')
+2024-07-17 18:47:33,482 - INFO - Clicked on element located by ('id', 'submit')
+2024-07-17 18:47:33,899 - INFO - Clicked on element located by ('xpath', "//a[text()='Log out']")
+2024-07-17 18:47:33,904 - INFO - Retriveing the page Test Login | Practice Test Automation
+2024-07-17 18:47:34,041 - ERROR - Your test is fail please check screenshot:- screenshot_20240717-184733.png
+2024-07-17 18:47:34,041 - ERROR - Assertion failed: Test Login | Practice Test Automation == Test Login | Practice Test Automatio, 
+2024-07-17 18:58:20,931 - INFO - Sent keys 'student' to element located by ('id', 'username')
+2024-07-17 18:58:20,979 - INFO - Sent keys 'Password123' to element located by ('id', 'password')
+2024-07-17 18:58:21,880 - INFO - Clicked on element located by ('id', 'submit')
+2024-07-17 18:58:22,293 - INFO - Clicked on element located by ('xpath', "//a[text()='Log out']")
+2024-07-17 18:58:22,296 - INFO - Retriveing the page Test Login | Practice Test Automation
+2024-07-17 18:58:22,454 - ERROR - Your test is fail please check screenshot:- screenshot_20240717-185822.png
+2024-07-17 18:58:22,454 - ERROR - Assertion failed: Test Login | Practice Test Automation == Test Login | Practice Test Automatio, 

@@ -22,5 +22,11 @@ class Test_login(Baseclass):
         self.login.do_login("stud", "Pass")
         self.base.assertion(self.base.get_text(self.login.Invalid_creds), "Your username is invalid!")
 
+    def test_05_user_can_logout_account(self):
+        self.login.do_login("student", "Password123")
+        self.login.do_logout()
+        self.base.assertion(self.base.get_title(), 'Test Login | Practice Test Automation')
+
+
 
 

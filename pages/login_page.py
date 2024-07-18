@@ -10,6 +10,7 @@ class Login(Base):
     submit_btn = (By.ID, "submit")
     after_login_succesful_text = (By.CSS_SELECTOR, "h1[class='post-title']")
     Invalid_creds = (By.CSS_SELECTOR, "div[id='error']")
+    click_logout = (By.XPATH, "//a[text()='Log out']")
 
     def do_login(self,username, password):
         try:
@@ -18,3 +19,6 @@ class Login(Base):
             self.do_click(self.submit_btn)
         except:
             raise
+
+    def do_logout(self):
+        self.do_click(self.click_logout)
